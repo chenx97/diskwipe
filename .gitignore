@@ -50,3 +50,15 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Executable
+diskwipe
+
+# Various cache
+.cache
+
+# VSCode
+.vscode
+
+# Compile commands
+compile_commands.json
