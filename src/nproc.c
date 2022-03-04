@@ -4,7 +4,6 @@
 #else
 #include <unistd.h>
 #endif
-#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,15 +24,13 @@ int get_nproc()
   nprocs = sysconf(_SC_NPROCESSORS_ONLN);
   if (nprocs < 1)
   {
-    fprintf(stderr, "Could not determine number of CPUs online:\n%s\n",
-            strerror(errno));
+    perror("Could not determine number of CPUs online:\n");
     return -1;
   }
   nprocs_max = sysconf(_SC_NPROCESSORS_CONF);
   if (nprocs_max < 1)
   {
-    fprintf(stderr, "Could not determine number of CPUs configured:\n%s\n",
-            strerror(errno));
+    perror("Could not determine number of CPUs configured:\n");
     return -1;
   }
   return nprocs;

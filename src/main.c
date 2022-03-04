@@ -6,7 +6,6 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/errno.h>
 
 int64_t buf[1024];
 pthread_t *threads;
